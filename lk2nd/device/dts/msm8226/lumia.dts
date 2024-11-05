@@ -3,9 +3,14 @@
 #include <skeleton32.dtsi>
 #include <lk2nd.dtsi>
 
-&lk2nd {
+/ {
+	qcom,msm-id = <200 0>;
+	qcom,board-id = <8 0>;
 	nokia-moneypenny {
 		model = "Nokia Lumia 630";
-		compatible = "nokia,moneypenny";
+		compatible = "nokia,moneypenny", "qcom,msm8926", "lk2nd,device";
+		lk2nd,smd-rpm-hack-opening;
+		lk2nd,keys =
+			<KEY_VOLUMEUP   106 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
 	};
 };
